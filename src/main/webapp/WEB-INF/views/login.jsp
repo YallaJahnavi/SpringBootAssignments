@@ -97,8 +97,8 @@
     <div class="login-container">
         <h2>Login</h2>
         <form action="login" method="post">
-            <label>Username:</label>
-            <input type="text" name="username" required><br>
+            <label>Email:</label> <!-- CHANGED: Username ➝ Email -->
+            <input type="text" name="email" required><br> <!-- CHANGED: name="username" ➝ name="email" -->
 
             <label>Password:</label>
             <input type="password" name="password" required><br>
@@ -113,3 +113,4 @@
     </div>
 </body>
 </html>
+
