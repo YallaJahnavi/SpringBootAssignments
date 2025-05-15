@@ -24,4 +24,16 @@ public class UserService {
         userRepository.save(user);
         return true;
     }
+    
+    public UserEntity validateUser(String email, String password) {
+        UserEntity user = userRepository.findByEmail(email);
+        if (user != null) {
+            BCryptPasswordEncoder encoder = new BCryptPasswordEncoder();
+            if (encoder.matches(password, user.getPassword())) {
+                return user; // Password matched
+            }
+        }
+        return null; // User not found or password incorrect
+    }
+
 }
